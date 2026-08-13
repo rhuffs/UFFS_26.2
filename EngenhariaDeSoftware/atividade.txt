@@ -1,0 +1,9 @@
+elicitação de requisitos da agenda do google
+
+
+1.Login e Senha .
+2.Criar Enventos/tarefas/Agendar Horario.
+3.Calendario funcional e interativo
+
+
+
