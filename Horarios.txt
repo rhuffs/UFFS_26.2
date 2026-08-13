@@ -1,0 +1,17 @@
+Segunda             
+13:30 -- 16:00 Org     
+
+terça    
+16:10 -- 17:50 Web
+19:00 -- 22:40 Estatistica
+
+quarta     
+13:30 -- 17:50 Calc1
+
+quinta   
+13:30 -- 17:50 Eng Software
+
+sexta 
+13:30 -- 16:00 Web
+16:10 -- 17:50 Eng Software
+19:00 -- 22:40 Ed 2
