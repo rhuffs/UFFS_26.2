@@ -1,6 +1,6 @@
 function DurEvento(inicio, fim){
     if (inicio < fim){
-        return fim = inicio;
+        return fim - inicio;
     } else if (inicio > fim){
         return (24 - inicio) + fim;
     } else {

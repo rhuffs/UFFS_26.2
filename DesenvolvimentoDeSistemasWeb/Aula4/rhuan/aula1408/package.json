@@ -1,0 +1,14 @@
+{
+  "name": "aula1408",
+  "version": "MeuPrimeiroBackend",
+  "main": "index.js",
+  "author": "rhuan",
+  "license": "MIT",
+  "scripts" : {
+    "start" : "node index.js",
+    "dev" : "nodemon index.js" 
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
