@@ -4,11 +4,14 @@
   "main": "index.js",
   "author": "rhuan",
   "license": "MIT",
-  "scripts" : {
-    "start" : "node index.js",
-    "dev" : "nodemon index.js" 
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

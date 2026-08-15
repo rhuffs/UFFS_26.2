@@ -20,6 +20,12 @@ app.post("/helloworld", (req,res) => {
     res.status(200).json({mensagem : `Hello ${nome}` });
 });
 
+app.get("/easteregg", (req,res) => {
+    res.status(200).json({mensagem : "You Stupid bicth ass nigga" }); //200..299 OK //400.499 erro do cliente // 500...599 erro de servidor
+                                                        //https://httpstatusdogs.com/ kkkkkkkk
+});
+
+
 app.post("/at1", (req,res) => {
     function Salario (horas,valorHoras){
     if (horas > 200){
@@ -129,7 +135,7 @@ app.post("/at6", (req,res) => {
     }
 
     let resultado = (certo / total) * 100;
-    res.status(200).json({Resultado : resultado.toFixed(2) })
+    res.status(200).json(`Números entre 10 e 20 são ${resultado.toFixed(2)}%`);
 
 });
 
@@ -155,7 +161,8 @@ app.post("/at8", (req,res) => {
         let neg = 0;
 
         for (let Num of numeros){
-            if (Num >= 0){
+            if (Num === 0) continue;
+            if (Num > 0){
                 pos++;
             } else {
                 neg++
@@ -166,5 +173,57 @@ app.post("/at8", (req,res) => {
     }
     let PN = Posneg();
     res.status(200).json(PN)
-})
+});
 
+app.post("/at9", (req, res) => {
+    let medidas = req.body.medidas;
+
+    let certo = true;
+    let movimentoAnterior = 0;
+
+    for (let i = 1; i < medidas.length; i++) {
+        let anterior = medidas[i - 1];
+        let atual = medidas[i];
+
+        if (atual > anterior) {
+            if (movimentoAnterior === 1) {
+                certo = false;
+                break;
+            }
+
+            movimentoAnterior = 1;
+
+        } else if (atual < anterior) {
+            if (movimentoAnterior === -1) {
+                certo = false;
+                break;
+            }
+
+            movimentoAnterior = -1;
+
+        } else {
+            certo = false;
+            break;
+        }
+    }
+
+    res.status(200).json({
+        resultado: certo ? 1 : 0
+    });
+});
+
+app.post("/at10", (req, res) => {
+    let data = req.body.data;
+
+    let partes = data.split("/");
+
+    let dia = partes[0];
+    let mes = partes[1];
+    let ano = partes[2];
+
+    res.status(200).json({
+        "Mes/Dia/Ano": `${mes}/${dia}/${ano}`,
+        "Ano/Mes/Dia": `${ano}/${mes}/${dia}`,
+        "Dia-Mes-Ano": `${dia}-${mes}-${ano}`
+    });
+});
