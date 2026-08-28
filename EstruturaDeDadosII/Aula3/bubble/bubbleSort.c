@@ -25,26 +25,16 @@ void geraPiorCaso(int vet[], int n){
     }
 }
 
-void bubblePior(int vet[], int tam){
-    int i, j, temp;
-    int flag = 0;
-    for (i = 0; i < tam - 1; i++){
-        for (j = 0; j < tam - i - 1; j++){
-           if (vet[j] > vet[j + 1]){
-                temp = vet[j];
-                vet[j] = vet[j + 1];
-                vet[j + 1] = temp;
-                flag++;
-            }
-        }
-    }
-   
-    printf("Vetor de tamanho %d fez %d trocas.\n", tam, flag);
-}
 
 void geraVet(int vet[], int n, int min, int max){
     for (int i = 0; i < n; i++) {
         vet[i] = min + rand() % (max - min + 1);
+    }
+}
+
+void imprimeVet(int vet[], int tam){
+    for (int i = 0; i < tam; i++){
+       printf("%d ", vet[i]); 
     }
 }
 
@@ -63,43 +53,57 @@ int main(){
     geraVet(Vm, m, 1, 1000);
 
 
-    printf("Caso 10\n");
-    printf("Caso normal\n");
+    printf("\nCaso 10\n");
+    imprimeVet(Vn, n);
+    
+    printf("\nCaso normal \n");
     bubbleSort(Vn, n);
+    imprimeVet(Vn, n);
+    
 
-    printf("Melhor caso\n");
+    printf("\nMelhor caso\n");
     bubbleSort(Vn, n);
+    imprimeVet(Vn, n);
 
-    printf("Pior caso\n");
+    printf("\nPior caso\n");
     geraPiorCaso(Vn, n);
     bubbleSort(Vn, n);
+    imprimeVet(Vn, n);
 
-    printf("\n");
+    printf("\n/////////////\n");
     
     
-    printf("Caso 100\n");
-    printf("Caso normal\n");
+    printf("\nCaso 100\n");
+    imprimeVet(Vb, b);
+    printf("\nCaso normal\n");
     bubbleSort(Vb, b);
+    imprimeVet(Vb, b);
 
-    printf("Melhor caso\n");
+    printf("\nMelhor caso\n");
     bubbleSort(Vb, b);
+    imprimeVet(Vb, b);
 
-    printf("Pior caso\n");
+    printf("\nPior caso\n");
     geraPiorCaso(Vb, b);
     bubbleSort(Vb, b);
+    imprimeVet(Vb, b);
 
-    printf("\n");
+    printf("\n//////////////\n");
 
-    printf("Caso 1000\n");
-    printf("Caso normal\n");
+    printf("\nCaso 1000\n");
+    imprimeVet(Vm, m);
+    printf("\nCaso normal\n");
     bubbleSort(Vm, m);
+    imprimeVet(Vm, m);
 
-    printf("Melhor caso\n");
+    printf("\nMelhor caso\n");
     bubbleSort(Vm, m);
+    imprimeVet(Vm, m);
 
-    printf("Pior caso\n");
+    printf("\nPior caso\n");
     geraPiorCaso(Vm, m);
     bubbleSort(Vm, m);
+    imprimeVet(Vm, m);
 
     return 0;
 }
