@@ -1,0 +1,13 @@
+{
+  "name": "aula6",
+  "version": "1.0",
+  "main": "index.js",
+  "author": "rhuan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

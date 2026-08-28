@@ -1,0 +1,17 @@
+Bublle Sort
+
+Ordenação onde pega o maior e joga pro final
+comparar com a posição proxima se é maior , se sim, troca as posicoes
+se não, pega o maior e compara com as proximas.
+
+selection sort
+
+percorre e coloca o menor no primeiro e diminui o tamnho do vetor
+
+
+Inserction sort
+
+pega cada um de um vetor e coloca em um novo ja na posicao correta
+
+
+
