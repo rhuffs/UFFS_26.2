@@ -1,21 +1,42 @@
 import math
 
-def binomial_exato(n, p, x):
-    return math.comb(n, x) * (p ** x) * ((1 - p) ** (n - x))
-
-
-def binomial_menor_igual(n, p, x):
-    probabilidade = 0
-
-    for k in range(x + 1):
-        probabilidade += math.comb(n, k) * (p ** k) * ((1 - p) ** (n - k))
-
+def bi_Individual(n, p, x):
+    q = 1 - p
+    combinacao = math.comb(n, x)
+    probabilidade = combinacao * (p ** x) * (q ** (n - x))
     return probabilidade
 
 
-n = 10
-p = 0.5
-x = 3
+def binomial_Acu(n, p, x):
+    probabilidade = 0
+    for k in range(x + 1):
+        probabilidade += bi_Individual(n, p, k)
+    return probabilidade
 
-print("P(X = x):", binomial_exato(n, p, x))
-print("P(X <= x):", binomial_menor_igual(n, p, x))
+
+
+
+n = int(input("Digite o número de tentativas (n): "))
+p = float(input("Digite a probabilidade de sucesso (p): "))
+x = int(input("Digite o número de sucessos (x): "))
+
+print()
+print("Escolha o tipo de probabilidade:")
+print("1 - P(X = x)")
+print("2 - P(X <= x)")
+
+opcao = input("Digite sua opção: ")
+
+print()
+
+
+if opcao == "1":
+    resultado = bi_Individual(n, p, x)
+    print(f"P(X = {x}) = {resultado:.6f}")
+
+elif opcao == "2":
+    resultado = binomial_Acu(n, p, x)
+    print(f"P(X <= {x}) = {resultado:.6f}")
+
+else:
+    print("Opção inválida!")
