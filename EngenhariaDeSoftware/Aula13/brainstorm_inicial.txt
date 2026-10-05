@@ -1,0 +1,32 @@
+Para consultórios odontológicos que atende
+Grupo: Wagner Rech Neto e Rhuan Paiva
+
+Público Alvo: consultórios odontológicos que atendem pacientes com agendamento prévio, com mais de um dentista envolvido
+
+Problema/dor ou oportunidade: registros de agendas de dentistas podem acabar se misturando em relação à seus pacientes, com conflitos de horários acidentais, e busca de informações de pacientes por meio de arquivos físicos sendo demorada e podendo facilmente ficar desorganizado por descuidos na manipulação
+
+Solução Produto: formulação de um site com acesso de usuários, diferenciando diferentes dentistas e suas agendas, contendo também uma conexão das consultas com o seu devido paciente, cujas informações de detalhes de consultas, exames, anamneses e odontogramas estejam relacionadas com por meio de um banco de dados
+
+Benefício/Valor: facilidade de identificar quais são os pacientes do dia, em que horário, e qual o dentista encarregado deles, além de acesso rápido e fácil às informações dos pacientes, sempre organizadas
+
+Diferencial: A capacidade de acessar a informação relacionada aos materiais necessários para determinada consulta (e se são suficientes), além das informações dos pacientes cujas consultas estão detalhadas na agenda, para um preparo e acesso de informações mais rápido e facilitado
+
+Para consultórios odontológicos que atendem pacientes com agendamento prévio, cujo 
+registros de agendas de dentistas podem acabar se misturando em relação à seus pacientes, com conflitos de horários acidentais, 
+e busca de informações de pacientes por meio de arquivos físicos sendo demorada e podendo facilmente ficar desorganizado por descuidos na manipulação
+a solucaão encontrada foi a formulação de um site com acesso de usuários, diferenciando diferentes dentistas e suas agendas,
+contendo também uma conexão das consultas com o seu devido paciente, cujas informações de detalhes de consultas, exames,
+anamneses e odontogramas estejam relacionadas com por meio de um banco de dados
+gera  a facilidade de identificar quais são os pacientes do dia, em que horário, e qual o dentista encarregado deles, além de acesso rápido e fácil às informações dos pacientes, sempre organizadas
+Com o diferencial 
+
+
+
+
+
+
+
+
+
+
+

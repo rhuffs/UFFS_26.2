@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "rhuan",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon main.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}

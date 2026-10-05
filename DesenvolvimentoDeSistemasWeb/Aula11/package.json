@@ -1,0 +1,16 @@
+{
+  "name": "Aula11",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "rhuan",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
