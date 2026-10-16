@@ -94,7 +94,7 @@ def erro(N, z, s, n):
 while True:
     print("-> Calculadoura de Média e Proporção\n")
     op = isvariable("Digite:\n1) Média; \n2) Proporção;\n3) Encerrar.\n>", 2)
-    print("\nOBS: para casos depois da vírgula, utiliza-se caractere\n. (ponto) para números com vírgula em casos que precisa!\n EX.:\n" \
+    print("OBS: para casos depois da vírgula, utiliza-se caractere\n. (ponto) para números com vírgula em casos que precisa!\n EX.:\n" \
     "1.90 ->(não 1,90)\n")
 
     match op:
@@ -127,8 +127,8 @@ while True:
                             print("Valores invalidos!")
                         else:
                             estintervalar(N, X, Z, S, n)
-                            e= erro(N,Z,S,n)
-                            print("O erro de estimacação é de{e:.2f}")
+                            e = erro(N,Z,S,n)
+                            print(f"O erro de estimacação é de{e:.2f}")
 
                         
                     case 3:
