@@ -1,0 +1,127 @@
+Lista de Exercícios: Estrutura de Dados e Ordenação
+Esta lista de exercícios tem como objetivo consolidar os conhecimentos teóricos e práticos acerca dos algoritmos de ordenação e da análise de complexidade assintótica. A lista é composta por questões divididas por tópicos específicos, complementadas com blocos de questões teóricas e práticas consolidadas. Responda às questões teóricas justificando formalmente e elabore as resoluções práticas com atenção à manipulação da memória e laços de repetição.
+Quadro de Referência: Complexidade de Tempo
+Algoritmo	Melhor Caso	Caso Médio	Pior Caso
+ 
+Selection Sort	Ω(n²) 	Θ(n²)	O(n²)
+Bubble Sort	Ω(n) 	Θ(n²) 	O(n²) 
+Insertion Sort	Ω(n) 	Θ(n²) 	O(n²) 
+Merge Sort	Ω(n log n) 	Θ(n log n) 	O(n log n) 
+Quick Sort	Ω(n log n)	Θ(n log n) 	O(n²) 
+
+Parte 1: QuickSort e Particionamento de Hoare
+A versão de PARTITION estudada na disciplina difere da original. Abaixo, apresentamos os exercícios referenciando o algoritmo de partição original proposto por C.A.R. Hoare :
+    1. Exercício 1: Demonste a operação de HOARE-PARTITION sobre o array A = ⟨13, 19, 9, 5, 12, 8, 7, 4, 11, 2, 6, 21⟩. Mostre os valores do array e os valores auxiliares (i e j) após cada iteração do laço while (linhas 4−13).
+    2. Exercício 2: Seja v[1..4] o vetor 77, 55, 33, 99. A execução de quicksort(v, p, r) gera a seguinte sequência de invocações:
+quicksort(v, 1, 4)
+    quicksort(v, 1, 2)
+        quicksort(v, 1, 0)
+        quicksort(v, 2, 2)
+    quicksort(v, 4, 4)
+Repita este exercício de rastreamento de invocações para o vetor v[1..6] = 55, 44, 22, 11, 66, 33.
+Parte 2: Insertion Sort
+Contexto: Considere a implementação do algoritmo de ordenação por inserção abaixo:
+void
+insertionsort (int n, int v[])
+{
+   for (int j = 1; j < n; ++j) {
+      int x = v[j];
+      int i;
+      for (i = j-1; i >= 0 && v[i] > x; --i)
+         v[i+1] = v[i];
+      v[i+1] = x;
+   }
+}
+    3. Exercício 3: Analise o código acima e responda às questões:
+a) O que acontece se alterarmos o laço for (int j = 1; ... para for (int j = 0; ...?
+b) O que acontece se alterarmos a atribuição v[i+1] = x para v[i] = x?
+    4. Exercício 4: Escreva uma versão recursiva do algoritmo de ordenação por inserção.
+Parte 3: Selection Sort
+    5. Exercício 5: Escreva uma função que permute os elementos de um vetor inteiro v[0..n-1] de modo que eles fiquem em ordem decrescente usando uma versao modificada do algoritmo SelectionSort.
+    6. Exercício 6: Descreva e analise uma instância de pior caso para o algoritmo SelectionSort, ou seja, um vetor v[0..n-1] que leva o algoritmo a executar o maior número possível de comparações.
+Parte 4: Merge Sort e Análise
+    7. Exercício 7: Escreva uma função que receba vetores disjuntos x[0..m-1] e y[0..n-1], ambos em ordem crescente, e produza um vetor z[0..m+n-1] que contenha o resultado da intercalação dos dois vetores dados. Escreva duas versões da função: uma iterativa e uma recursiva.
+    8. Exercício 8: Considere a seguinte implementação da função de intercalação do mergesort:
+static void
+intercala (int p, int q, int r, int v[])
+{
+   int *w;  // 1
+   w = malloc ((r-p) * sizeof (int));  // 2
+   int i = p, j = q;  // 3
+   int k = 0;  // 4
+   while (i < q && j < r) {  // 5
+      if (v[i] <= v[j])  w[k++] = v[i++];  // 6
+      else  w[k++] = v[j++];  // 7
+   }  // 8
+   while (i < q)  w[k++] = v[i++];  // 9
+   while (j < r)  w[k++] = v[j++];  // 10
+   for (i = p; i < r; ++i)  v[i] = w[i-p];  // 11
+   free (w);  // 12
+}
+Um algoritmo de intercalação é estável se não altera a posição relativa de elementos iguais. A função intercala discutida acima é estável? E se a comparação v[i] <= v[j] for trocada por v[i] < v[j]?
+    9. Exercício 9: Prove que a função de custo/complexidade C(n) para o merge sort em termos de atribuições de array tem a propriedade O(n log n). Você pode iniciar sua prova com a premissa de que C(1) = 0 e para todos os outros casos C(n) = 2(C(n/2)) + n.
+Parte 5: Análise Assintótica e Busca Binária
+    10. Exercício 10: Como o consumo de tempo do seguinte fragmento de código varia com n?
+int c = 1;
+for (int i = 0; i < n; i *= 2)
+   for (int j = 1; j < n; ++j)
+      c += 1;
+    11. Exercício 11: Deseja-se determinar se 37 está no array usando uma busca binária. Liste os índices dos elementos do array comparados com 37 durante a execução desta busca.
+0	1	2	3	4	5	6	7	8	9	10	11	12	13	14
+11	15	19	21	22	25	27	30	34	35	36	39	40	42	50
+Parte 6: Exercícios Teóricos Gerais
+    12. Crescimento de Funções e Eficiência Assintótica
+Enunciado: Por que a análise de eficiência assintótica de algoritmos foca no limite em que o tamanho da entrada aumenta sem limitação, permitindo ignorar constantes multiplicativas e termos de ordem mais baixa?
+
+    13. Notações Assintóticas
+Enunciado: Com base na definição matemática das notações para tempos de execução, qual é a diferença formal entre afirmar que um algoritmo possui complexidade Θ(g(n)) versus afirmar que possui O(g(n))?
+
+    14. Os Limites da Ordenação por Comparação
+Enunciado: Existe um limite teórico de desempenho intransponível no pior caso para algoritmos que ordenam arranjos baseando-se na comparação de elementos? Identifique qual é esse limite e cite um algoritmo que o atinge.
+
+    15. Selection Sort (Ordenação por Seleção)
+Enunciado: No método Selection Sort, explique por que existe uma distinção na ordem de grandeza entre a sua eficiência de comparações e a sua eficiência de trocas.
+
+    16. Bubble Sort (Ordenação Bolha)
+Enunciado: O Bubble Sort possui um tempo de pior caso pertencente à classe O(n²), mas consegue finalizar a ordenação antes do número máximo de etapas se o arranjo já estiver ordenado. Qual condição lógica do algoritmo permite essa interrupção antecipada?
+
+    17. Insertion Sort (Ordenação por Inserção)
+Enunciado: Descreva o funcionamento de deslocamento do algoritmo Insertion Sort e informe a sua classificação matemática de tempo de execução no pior caso.
+
+    18. A Lógica do Merge Sort (Ordenação por Intercalação)
+Enunciado: Como o algoritmo Merge Sort executa, sequencialmente, os passos de divisão, conquista e combinação? 
+
+    19. Custo de Espaço no Merge Sort
+Enunciado: Qual é a desvantagem primária em termos de uso de memória na etapa de combinação (Merge) do Merge Sort, comparada a algoritmos que ordenam in-place? 
+    20. A Eficiência Prática do Quick Sort
+Enunciado: Apesar de seu tempo de execução no pior caso pertencer a O(n²), por que métodos como o Quick Sort e congêneres de particionamento aleatorizado superam na média outras técnicas lineares em cenários de prática?
+
+    21. O Princípio do Particionamento In-Place
+Enunciado: Descreva sucintamente como atua um particionamento, tal como feito pelo Quicksort, e qual o papel da variável pivô (x).
+
+Parte 7: Exercícios Práticos Complementares
+    22. Teste de Mesa no Insertion Sort
+Enunciado: Considere o arranjo inicial A = [31, 41, 59, 26, 41, 58]. Ilustre passo a passo a operação do Insertion Sort, mostrando os deslocamentos ocorridos toda vez que a variável chave for inserida e o respectivo aumento do subarranjo ordenado.
+    23. Implementação do Bubble Sort Otimizado
+Enunciado: O Bubble Sort clássico executa passagens desnecessárias se o vetor já estiver ordenado. Escreva o código em linguagem C para o algoritmo de ordenação Bolha declarando uma variável `ntrocas`. Utilize um laço do-while com uma condição condicional dependente de ntrocas e dos limites de iteração.
+    24. Contabilização de Operações no Selection Sort
+Enunciado: O Selection Sort minimiza trocas às custas de comparações. Baseando-se no vetor V = [209, 330, 25, 15, 42, 2, 32, 8, 55, 145], trace as iterações e comprove aritmeticamente e logicamente que o algoritmo necessitará exatamente de NC = 45 comparações e executará NT = 7 trocas físicas na memória para este cenário.
+    25. O Procedimento Merge passo a passo
+Enunciado: Considere o momento em que o procedimento Merge precisa fundir as duas subsequências ordenadas: L = [2, 4, 5, 7] e R = [1, 2, 3, 6]. Simule a execução do laço de intercalação que compara as matrizes atestando qual elemento é copiado de volta para o agregado principal em cada ciclo.
+    26. Modificação de Ordem no Insertion Sort
+Enunciado: Os algoritmos de ordenação baseados em comparação podem ser invertidos com facilidade. Reescreva o laço while central do Insertion Sort (em pseudocódigo) para realizar a ordenação em ordem reversa (não crescente), indicando explicitamente o operador lógico modificado em relação ao limite do elemento avaliado.
+    27. Ponto de Intersecção de Complexidade
+Enunciado: Suponha que estamos comparando implementações em uma máquina abstrata onde a ordenação por inserção requer 8n² passos e a ordenação por intercalação requer 64n log&sub2; n passos. Calcule matematicamente (ou via script auxiliar) a partir de qual tamanho numérico da matriz n, o Merge Sort torna-se estritamente mais rápido.
+    28. Otimização em Elementos Iguais
+Enunciado: Quando um vetor apresenta múltiplos elementos duplicados (idênticos), algoritmos padrões sofrem com execuções desbalanceadas. Modifique o pseudocódigo do Particionamento para, em vez de gerar um pivô singular, aglomerar todos os termos iguais ao pivô no meio do conjunto delimitado pelos limites de contadores Q e T.
+    29. Escolha Estrutural de Algoritmo
+Enunciado: Sabendo que o algoritmo Seleção (Selection Sort) é mais recomendado se a função de comparação for simples e os elementos a serem trocados formarem estruturas pesadas visando minorar o excesso de permutas. Escreva a definição de uma struct contendo campos pesados em linguagem C, e providencie a implementação de uma função de swap que intercambie somente os ponteiros de memória em vez da cópia inteira do bloco de dados, validando seu uso com o Selection Sort.
+
+Referências
+
+https://mathcenter.oxford.emory.edu/site/cs171/probSetSorting/
+
+https://www.ime.usp.br/~pf/algoritmos/aulas/mrgsrt.html
+
+CORMEN, T.; RIVEST, R.; STEIN, C.; LEISERSON, C. Algoritmos: Teoria e Prática. 3. ed.
+Rio de Janeiro: Elsevier - Campus, 2012.
