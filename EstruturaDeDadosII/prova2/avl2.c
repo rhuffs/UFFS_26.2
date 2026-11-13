@@ -374,8 +374,17 @@ No *removerAVL(No *raiz, int valor) {
             raiz->dir = removerAVL(raiz->dir, temp->valor);
         }
     }
+         A
+        /
+       20
+      /  \   
+    10    30
+          /\  
+        14  31
 
-
+        temp->valor = 14
+        20 = 14
+        30 = null
     // 3. Atualiza a altura do nó
     atualizarAltura(raiz);
 
